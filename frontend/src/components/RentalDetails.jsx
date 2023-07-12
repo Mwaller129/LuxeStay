@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
+import Reviews from "./component/Reviews"
 
 const rentalDetails = (props) => {
   const [propertyId, setPropertyId] = useState("")
@@ -28,6 +29,13 @@ const rentalDetails = (props) => {
           <h3>Bedrooms/Bathrooms: {property.size}</h3>
         </div>
         <p>{property.description}</p>
+        <h3>Reviews</h3>
+        {reviews.map((review) => (
+          <div key={review._id}>
+            <p>Name: </p>
+            <p>Review: </p>
+          </div>
+        ))}
       </div>
       <Link to="/rentals">Back</Link>
     </div>

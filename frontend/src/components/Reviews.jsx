@@ -1,7 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
 
-const Reviews = () => {
+const Reviews = ({ getReviews }) => {
   const initialState = {
     name: "",
     review: "",
@@ -13,6 +13,7 @@ const Reviews = () => {
     event.preventDefault()
     await axios.post("http://localhost:3001/rentals/:id", formState)
     setFormState(initialState)
+    props.getReviews()
   }
 
   const handleChange = (event) => {
