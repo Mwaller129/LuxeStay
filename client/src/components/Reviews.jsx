@@ -1,7 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
 
-const Reviews = ({ getReviews }) => {
+const Reviews = ({ reviews, setReviews }) => {
   const initialState = {
     name: "",
     reviewDetails: "",
@@ -11,9 +11,15 @@ const Reviews = ({ getReviews }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    await axios.post("http://localhost:3001/rentals/:id", formState)
+    let newReview = await axios.post(
+      "http://localhost:3001/rentals/:id",
+      formState
+    )
+    console.log(newReview)
+    let reviewList = [...reviews]
+    reviewList.push(newReview.data)
+    setReviews(reviewList)
     setFormState(initialState)
-    props.getReviews()
   }
 
   const handleChange = (event) => {
@@ -34,7 +40,7 @@ const Reviews = ({ getReviews }) => {
         <label htmlFor="review">Review: </label>
         <textarea
           id="reviewDetails"
-          cols="30"
+          cols="20"
           rows="10"
           onChange={handleChange}
           value={formState.reviewDetails}

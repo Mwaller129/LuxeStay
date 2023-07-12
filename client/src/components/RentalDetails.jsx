@@ -44,14 +44,14 @@ const rentalDetails = (props) => {
         </div>
         <p>{property.description}</p>
         <div className="reviews">
-          <h3>Reviews</h3>
+          <Reviews reviews={reviews} setReviews={setReviews} />
+          <h3>Reviews:</h3>
           {/* {reviews.map((review) => (
             <div key={review._id}>
-              <p>Name:{review.name} </p>
-              <p>Review: {review.reviewDetails}</p> */}
-          <Reviews getReviews={getReviews} />
-          {/* </div> */}
-          {/* ))} */}
+              <p>Name: {review.name} </p>
+              <p>Review: {review.reviewDetails}</p>
+            </div>
+          ))} */}
         </div>
       </div>
       <Link to="/rentals">Back</Link>
