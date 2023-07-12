@@ -4,7 +4,7 @@ import axios from "axios"
 const Reviews = ({ getReviews }) => {
   const initialState = {
     name: "",
-    review: "",
+    reviewDetails: "",
   }
 
   const [formState, setFormState] = useState(initialState)
@@ -33,11 +33,11 @@ const Reviews = ({ getReviews }) => {
         />
         <label htmlFor="review">Review: </label>
         <textarea
-          id="review"
+          id="reviewDetails"
           cols="30"
           rows="10"
           onChange={handleChange}
-          value={formState.review}
+          value={formState.reviewDetails}
         ></textarea>
         <button type="submit">Submit</button>
       </form>

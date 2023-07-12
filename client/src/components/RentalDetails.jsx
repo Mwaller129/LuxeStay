@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
-import Reviews from "./component/Reviews"
+import axios from "axios"
+import Reviews from "./Reviews"
 
 const rentalDetails = (props) => {
   const [propertyId, setPropertyId] = useState("")
   const [property, setProperty] = useState(null)
+  const [reviews, setReviews] = useState([])
 
   let { id } = useParams()
 
@@ -14,6 +16,18 @@ const rentalDetails = (props) => {
     )
     setProperty(selectedProperty)
   }, [props.property, id])
+
+  const getReviews = async () => {
+    try {
+      let res = await axios.get("http://localhost:3001/rentals/:id")
+      setReviews(res.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  useEffect(() => {
+    getReviews()
+  }, [])
 
   return property ? (
     <div className="rental">
@@ -29,13 +43,16 @@ const rentalDetails = (props) => {
           <h3>Bedrooms/Bathrooms: {property.size}</h3>
         </div>
         <p>{property.description}</p>
-        <h3>Reviews</h3>
-        {reviews.map((review) => (
-          <div key={review._id}>
-            <p>Name: </p>
-            <p>Review: </p>
-          </div>
-        ))}
+        <div className="reviews">
+          <h3>Reviews</h3>
+          {/* {reviews.map((review) => (
+            <div key={review._id}>
+              <p>Name:{review.name} </p>
+              <p>Review: {review.reviewDetails}</p> */}
+          <Reviews getReviews={getReviews} />
+          {/* </div> */}
+          {/* ))} */}
+        </div>
       </div>
       <Link to="/rentals">Back</Link>
     </div>
