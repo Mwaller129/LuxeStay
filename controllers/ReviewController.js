@@ -1,4 +1,4 @@
-const { Review } = require("../models")
+const { Review, Rental } = require("../models")
 
 const GetReviews = async (req, res) => {
   try {
@@ -12,7 +12,11 @@ const GetReviews = async (req, res) => {
 const CreateReview = async (req, res) => {
   try {
     const review = await Review.create({ ...req.body })
-    res.send(review)
+    // res.send(review)
+    const rental = await Rental.findById(req.params.rental_id)
+    rental.reviews.push(review)
+    rental.save()
+    res.send(rental)
   } catch (error) {
     throw error
   }

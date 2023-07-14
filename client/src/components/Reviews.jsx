@@ -28,7 +28,7 @@ const Reviews = ({ reviews, setReviews }) => {
 
   return (
     // <div><h3>Reviews:</h3></div>
-    <div>
+    <div className="reviews">
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
@@ -37,7 +37,7 @@ const Reviews = ({ reviews, setReviews }) => {
           onChange={handleChange}
           value={formState.name}
         />
-        <label htmlFor="review">Review: </label>
+        <label htmlFor="reviewDetails">Review: </label>
         <textarea
           id="reviewDetails"
           cols="20"

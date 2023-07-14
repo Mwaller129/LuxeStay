@@ -19,7 +19,8 @@ const rentalDetails = (props) => {
 
   const getReviews = async () => {
     try {
-      let res = await axios.get("http://localhost:3001/rentals/:id")
+      let res = await axios.get(`http://localhost:3001/reviews/${id}/reviews`)
+      console.log(res)
       setReviews(res.data)
     } catch (err) {
       console.log(err)
@@ -46,12 +47,12 @@ const rentalDetails = (props) => {
         <div className="reviews">
           <Reviews reviews={reviews} setReviews={setReviews} />
           <h3>Reviews:</h3>
-          {/* {reviews.map((review) => (
+          {reviews?.map((review) => (
             <div key={review._id}>
               <p>Name: {review.name} </p>
               <p>Review: {review.reviewDetails}</p>
             </div>
-          ))} */}
+          ))}
         </div>
       </div>
       <Link to="/rentals">Back</Link>
