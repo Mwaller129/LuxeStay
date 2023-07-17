@@ -6,7 +6,7 @@ import AddRental from "./pages/AddRental"
 import RentalDetails from "./components/RentalDetails"
 import propertyData from "./data/properties.json"
 import { Route, Routes } from "react-router"
-import Nav from "./components/Nav"
+import Navigation from "./components/Navigation"
 import Register from "./pages/Register"
 import SignIn from "./pages/SignIn"
 import { CheckSession } from "./services/Auth"
@@ -36,7 +36,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Nav user={user} handleLogOut={handleLogOut} />
+      <Navigation user={user} handleLogOut={handleLogOut} />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
