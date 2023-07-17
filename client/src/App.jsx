@@ -9,7 +9,6 @@ import Navigation from "./components/Navigation"
 import Register from "./pages/Register"
 import SignIn from "./pages/SignIn"
 import { CheckSession } from "./services/Auth"
-import "bootstrap/dist/css/bootstrap.min.css"
 
 const App = () => {
   const [property, setProperty] = useState([])
@@ -41,12 +40,12 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/rentals" element={<Rentals property={property} />} />
+          <Route path="/rentals/all" element={<Rentals user={user} />} />
           <Route
             path="/rentals/:id"
             element={<RentalDetails property={property} />}
           />
-          <Route path="/addrental" element={<AddRental />} />
+          <Route path="rentals/addrental" element={<AddRental />} />
         </Routes>
       </main>
     </div>

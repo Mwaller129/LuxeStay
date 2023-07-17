@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react"
-import { useParams, Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { GetProperties } from "../services/Properties"
 import axios from "axios"
 import Reviews from "./Reviews"
 
-const rentalDetails = (props) => {
-  const [propertyId, setPropertyId] = useState("")
-  const [property, setProperty] = useState(null)
+const rentalDetails = (user) => {
+  let navigate = useNavigate()
+  const [property, setProperties] = useState(null)
   const [reviews, setReviews] = useState([])
 
-  let { id } = useParams()
-
   useEffect(() => {
-    let selectedProperty = props.property.find(
-      (property) => property.id === parseInt(id)
-    )
-    setProperty(selectedProperty)
-  }, [props.property, id])
+    const showProperties = async () => {
+      const data = await GetProperties()
+      setProperties(data)
+    }
+    showProperties()
+  }, [])
 
   const getReviews = async () => {
     try {
@@ -30,7 +30,7 @@ const rentalDetails = (props) => {
     getReviews()
   }, [])
 
-  return property ? (
+  return user ? (
     <div className="rental">
       <div className="rental-header">
         <img src={property.penthouse_image} alt={property.name} />
@@ -57,7 +57,12 @@ const rentalDetails = (props) => {
       </div>
       <Link to="/rentals">Back</Link>
     </div>
-  ) : null
+  ) : (
+    <div className="protected">
+      <h3>Oops! You must be signed in to do that!</h3>
+      <button onClick={() => navigate("/signin")}>Sign In</button>
+    </div>
+  )
 }
 
 export default rentalDetails

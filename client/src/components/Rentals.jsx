@@ -19,7 +19,7 @@ const Rentals = ({ user }) => {
     <>
       <div className="card-overlay centered">
         <div className="rental-grid">
-          {props.property.map((property) => (
+          {property.map((property) => (
             <div className="rental-card" key={property.id}>
               <Link to={`${property.id}`}>
                 <img
@@ -36,6 +36,11 @@ const Rentals = ({ user }) => {
       <Link to="/">Back</Link>
       <Link to="/addrental">Add a Rental</Link>
     </>
+  ) : (
+    <div className="protected">
+      <h3>Oops! You must be signed in to do that!</h3>
+      <button onClick={() => navigate("/signin")}>Sign In</button>
+    </div>
   )
 }
 export default Rentals
