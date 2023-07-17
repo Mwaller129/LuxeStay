@@ -4,7 +4,6 @@ import Home from "./pages/Home"
 import Rentals from "./components/Rentals"
 import AddRental from "./pages/AddRental"
 import RentalDetails from "./components/RentalDetails"
-import propertyData from "./data/properties.json"
 import { Route, Routes } from "react-router"
 import Navigation from "./components/Navigation"
 import Register from "./pages/Register"
@@ -13,7 +12,7 @@ import { CheckSession } from "./services/Auth"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 const App = () => {
-  const [property, setProperty] = useState(propertyData)
+  const [property, setProperty] = useState([])
   const [user, setUser] = useState(null)
 
   const handleLogOut = () => {

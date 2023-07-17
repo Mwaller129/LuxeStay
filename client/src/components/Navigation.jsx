@@ -8,17 +8,19 @@ const Navigation = ({ user, handleLogOut }) => {
   if (user) {
     userOptions = (
       <nav>
-        <div>
+        <div className="welcome">
           <h3>Welcome {user.email}!</h3>
-        </div>
-        <div className="links">
-          <Link to="/rentals" className="navLinks">
-            Rentals
-          </Link>
-          |<br></br>
-          <Link onClick={handleLogOut} to="/" className="navLinks">
-            Sign Out
-          </Link>
+          <br></br>
+          <br></br>
+          <div className="links">
+            <Link to="/rentals" className="navLinks">
+              Rentals
+            </Link>
+
+            <Link onClick={handleLogOut} to="/" className="navLinks">
+              Sign Out
+            </Link>
+          </div>
         </div>
       </nav>
     )
@@ -26,41 +28,23 @@ const Navigation = ({ user, handleLogOut }) => {
 
   const publicOptions = (
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/register">Register</Link>
-      <Link to="/signin">Sign In</Link>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/register">Register</Link>
+        </li>
+        <li>
+          <Link to="/signin">Sign In</Link>
+        </li>
+      </ul>
     </nav>
   )
 
   return (
     <>
-      {/* <Navbar bg="dark" data-bs-theme="dark">
-        <Container>
-          {/* <Navbar.Brand href="/">Navbar</Navbar.Brand>
-          {/* <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/signin">Sign In</Nav.Link>
-            <Nav.Link href="/register">Register</Nav.Link>
-          </Nav> */}
-      {/* </Container> */}
-      {/* // </Navbar> */}
-      {/* // <br /> */}
-
-      <nav vlass="nav">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-          <li>
-            <Link to="/signin">Sign In</Link>
-          </li>
-        </ul>
-      </nav>
-
-      {/* <Link>{user ? userOptions : publicOptions}</Link> */}
+      <Link>{user ? userOptions : publicOptions}</Link>
     </>
   )
 }
