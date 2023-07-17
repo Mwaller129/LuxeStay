@@ -1,5 +1,8 @@
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+
 const addRental = () => {
-  letNavigate = useNavigate()
+  let navigate = useNavigate()
   const [rentalValues, setRentalValues] = useState({
     name: "",
     email: "",

@@ -29,6 +29,7 @@ const Rentals = (props) => {
         ))}
       </div>
       <Link to="/">Back</Link>
+      <Link to="/addrental">Add a Rental</Link>
     </>
   )
 }
