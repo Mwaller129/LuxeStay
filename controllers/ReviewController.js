@@ -12,11 +12,11 @@ const GetReviews = async (req, res) => {
 const CreateReview = async (req, res) => {
   try {
     const review = await Review.create({ ...req.body })
-    // res.send(review)
-    const rental = await Rental.findById(req.params.rental_id)
-    rental.reviews.push(review)
-    rental.save()
-    res.send(rental)
+    res.send(review)
+    // const rentalReview = await Review.findById(req.params.review_id)
+    // rentalReview.review.push(reviews)
+    // rentalReview.save()
+    // res.send(rentalReview)
   } catch (error) {
     throw error
   }

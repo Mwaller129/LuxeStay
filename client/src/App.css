@@ -2,7 +2,54 @@ body {
   margin: 0;
 }
 
-.rental-grid  {
+nav {
+  background-color: black;
+  color: white;
+  display:flex;
+  justify-content: right;
+  align-items: first baseline;
+  padding-right: 10px;
+  height: 50px;
+ 
   
+}
+ .navLinks {
+  color: white;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 25px;
+}
+.marquee {
+  height: 550px;
+  overflow: hidden;
+  position: relative;
+ 
+  color: #333;
+  border: 1px solid #4a4a4a;
+}
 
+.marquee img {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  top: 0%;
+  left: 0%;
+  animation: scroll-left 20s linear infinite;
+}
+
+
+
+@keyframes scroll-left {
+  100% {
+
+      transform: translateX(100%);
+  }
+  100% {
+   
+      transform: translateX(-100%);
+  }
 }

@@ -10,13 +10,13 @@ router.post(
   controller.CreateReview
 )
 router.put(
-  "/:rental_id",
+  "/:review_id",
   middleware.stripToken,
   middleware.verifyToken,
   controller.UpdateReview
 )
 router.delete(
-  "/:rental_id",
+  "/:review_id",
   middleware.stripToken,
   middleware.verifyToken,
   controller.DeleteReview

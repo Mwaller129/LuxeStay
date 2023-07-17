@@ -3,9 +3,8 @@ const Schema = mongoose.Schema
 
 const reviewSchema = new Schema(
   {
-    title: { type: String, required: true },
-    body: { type: String },
-    image: { type: String },
+    name: { type: String, required: true },
+    reviewDetails: { type: String },
   },
   { timestamps: true }
 )
