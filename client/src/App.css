@@ -23,33 +23,14 @@ img {
   width: 50%;
   margin-top: 25px;
 }
-.marquee {
-  height: 550px;
-  overflow: hidden;
-  position: relative;
- 
-  color: #333;
-  border: 1px solid #4a4a4a;
-}
 
-.marquee img {
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  top: 0%;
-  left: 0%;
-  animation: scroll-left 20s linear infinite;
+.background {
+  background-image: url(https://www.callawayhenderson.com/localimagereader.ashx?imageurl=https%3A%2F%2Fsir.azureedge.net%2F1103i215%2F7kv5jx7w5rh44qt8qf4fxwk232i215&imagecache=true);
+  background-repeat: no-repeat;
+  background-size:auto;
+
 }
 
 
 
-@keyframes scroll-left {
-  100% {
 
-      transform: translateX(100%);
-  }
-  100% {
-   
-      transform: translateX(-100%);
-  }
-}

@@ -25,6 +25,8 @@ const addRental = () => {
   }
   return (
     <div className="addrental col">
+      <h1>Ready to Rent your Luxury Penthouse?</h1>
+      <p>Complete the form below to let us know more about your property. </p>
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">

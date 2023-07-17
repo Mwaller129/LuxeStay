@@ -10,6 +10,7 @@ import Nav from "./components/Nav"
 import Register from "./pages/Register"
 import SignIn from "./pages/SignIn"
 import { CheckSession } from "./services/Auth"
+import "bootstrap/dist/css/bootstrap.min.css"
 
 const App = () => {
   const [property, setProperty] = useState(propertyData)
