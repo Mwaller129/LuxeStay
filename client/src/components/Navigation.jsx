@@ -45,24 +45,20 @@ const Navigation = ({ user, handleLogOut }) => {
       {/* </Container> */}
       {/* // </Navbar> */}
       {/* // <br /> */}
-      <main className="navigation">
-        <nav vlass="nav">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
-            <li>
-              <Link to="/signin">Sign In</Link>
-            </li>
-          </ul>
-        </nav>
-        <div className="main-content"></div>
 
-        <footer className="footer">Footer</footer>
-      </main>
+      <nav vlass="nav">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
+          <li>
+            <Link to="/signin">Sign In</Link>
+          </li>
+        </ul>
+      </nav>
 
       {/* <Link>{user ? userOptions : publicOptions}</Link> */}
     </>

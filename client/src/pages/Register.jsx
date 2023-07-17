@@ -32,7 +32,7 @@ const Register = () => {
   }
 
   return (
-    <div className="signin col">
+    <div className="main-content">
       <h3>Create an Account to Search our Luxury Penthouse Rentals</h3>
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
