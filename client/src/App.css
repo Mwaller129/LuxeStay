@@ -1,7 +1,7 @@
 body {
   margin: 0;
   color: black;
-  font-family: sans-serif;
+  font-family: 'Maitree', serif;
   font-size: 20px;
 }
  .nav {
@@ -111,6 +111,9 @@ form label {
   width: 80%;
   margin: 0;
   padding: 0;
+  font-weight: bolder ;
+  color: black;
+  text-align: center;
 }
 
 .input-wrapper input {
@@ -120,6 +123,7 @@ form label {
   border-color: black;
   font-size: 1.1rem;
   outline: none;
+  font-weight: bolder ;
 }
 
 input::placeholder {
@@ -147,6 +151,11 @@ h1, h3 {
   text-align: center;
 }
 
+.addrental col {
+  padding-top: 100px;
+  margin-top: 50px;
+  font-weight: bolder ;
+}
 
 
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-import { GetProperties } from "../services/Properties"
+import { GetRentals } from "../services/Properties"
 
 const Rentals = ({ user }) => {
   let navigate = useNavigate()
@@ -9,7 +9,7 @@ const Rentals = ({ user }) => {
 
   useEffect(() => {
     const showProperties = async () => {
-      const data = await GetProperties()
+      const data = await GetRentals()
       setProperties(data)
     }
     showProperties()
@@ -24,7 +24,7 @@ const Rentals = ({ user }) => {
               <Link to={`${property.id}`}>
                 <img
                   style={{ display: "block" }}
-                  src={property.penthouse_image}
+                  src={property.image}
                   alt={property.name}
                 />
                 <h3>{property.name}</h3>
@@ -33,8 +33,8 @@ const Rentals = ({ user }) => {
           ))}
         </div>
       </div>
-      <Link to="/">Back</Link>
-      <Link to="/addrental">Add a Rental</Link>
+      <Link to="/rentals/all">Back</Link>
+      <Link to="rentals/addrental">Add a Rental</Link>
     </>
   ) : (
     <div className="protected">

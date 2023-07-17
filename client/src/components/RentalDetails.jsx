@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { GetProperties } from "../services/Properties"
+import { GetRentals } from "../services/Properties"
 import axios from "axios"
 import Reviews from "./Reviews"
 
 const rentalDetails = (user) => {
   let navigate = useNavigate()
-  const [property, setProperties] = useState(null)
+  const [property, setProperties] = useState([])
   const [reviews, setReviews] = useState([])
 
   useEffect(() => {
     const showProperties = async () => {
-      const data = await GetProperties()
+      const data = await GetRentals()
       setProperties(data)
     }
     showProperties()
@@ -33,7 +33,7 @@ const rentalDetails = (user) => {
   return user ? (
     <div className="rental">
       <div className="rental-header">
-        <img src={property.penthouse_image} alt={property.name} />
+        <img src={property.image} alt={property.name} />
         <div className="rental-name">
           <h1>{property.name}</h1>
         </div>
@@ -55,7 +55,7 @@ const rentalDetails = (user) => {
           ))}
         </div>
       </div>
-      <Link to="/rentals">Back</Link>
+      <Link to="/rentals/all">Back</Link>
     </div>
   ) : (
     <div className="protected">

@@ -13,7 +13,7 @@ const Navigation = ({ user, handleLogOut }) => {
           <br></br>
           <br></br>
           <div className="links">
-            <Link to="/rentals" className="navLinks">
+            <Link to="/rentals/all" className="navLinks">
               Rentals
             </Link>
 

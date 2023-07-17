@@ -1,6 +1,6 @@
 import Client from "./api"
 
-export const GetProperties = async () => {
+export const GetRentals = async () => {
   try {
     const res = await Client.get("/rentals/all")
     return res.data

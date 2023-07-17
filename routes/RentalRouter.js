@@ -10,13 +10,13 @@ router.post(
   controller.CreateRental
 )
 router.put(
-  "/:rental_id",
+  "/all/:rental_id",
   middleware.stripToken,
   middleware.verifyToken,
   controller.UpdateRental
 )
 router.delete(
-  "/:rental_id",
+  "all/:rental_id",
   middleware.stripToken,
   middleware.verifyToken,
   controller.DeleteRental
