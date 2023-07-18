@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const rentalDetailsSchema = new Schema(
+const rentalDetailSchema = new Schema(
   {
     name: { type: String, required: true },
     description: { type: String },
@@ -11,4 +11,4 @@ const rentalDetailsSchema = new Schema(
   { timestamps: true }
 )
 
-module.exports = rentalDetailsSchema
+module.exports = rentalDetailSchema
