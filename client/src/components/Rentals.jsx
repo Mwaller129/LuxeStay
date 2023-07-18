@@ -35,8 +35,16 @@ const Rentals = ({ user }) => {
           ))}
         </div>
       </div>
-      <Link to="/rentals/all">Back</Link>
-      <Link to="rentals/addrental">Add a Rental</Link>
+      <ul>
+        <div className="links">
+          <li>
+            <Link to="/">Back</Link>
+          </li>
+          <li>
+            <Link to="/rentals/addrental">Add Rental</Link>
+          </li>
+        </div>
+      </ul>
     </>
   ) : (
     <div className="protected">

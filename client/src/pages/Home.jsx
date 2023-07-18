@@ -1,7 +1,9 @@
 const Home = () => {
   return (
     <body className="main-content">
-      <footer className="footer">All Rights Reserved, LuxeStay 2023</footer>
+      <div className="welcome-scroll">
+        <h1>Welcome to LuxeStay</h1>
+      </div>
     </body>
   )
 }

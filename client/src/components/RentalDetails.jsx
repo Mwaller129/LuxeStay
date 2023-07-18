@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { GetRentals } from "../services/Properties"
 import axios from "axios"
 import Reviews from "./Reviews"
+import Rentals from "./Rentals"
 
 const rentalDetails = (user) => {
   let navigate = useNavigate()
@@ -31,41 +32,51 @@ const rentalDetails = (user) => {
   }, [])
 
   return user ? (
-    <body className="card-overlay centered">
-      <div className="rental-grid">
-        <div className="rental-header">
-          <div className="col">
-            <img
-              style={{ display: "block" }}
-              src={property.image}
-              alt={property.image}
-            ></img>
-          </div>
+    <body className="applybackground">
+      <div className="card-overlay centered">
+        {/* <Rentals property={property} /> */}
+        {/* <div className="rental-header"> */}
+        <div className="col">
+          <img
+            style={{ display: "block" }}
+            src={property.image}
+            alt={property.image}
+          />
+          {/* </div> */}
 
           <div className="rental-name">
             <h1>{property.name}</h1>
           </div>
         </div>
         <div className="input-wrapper">
-          <div className="rental-header">
-            <h3>Price: {property.price}</h3>
-            <h3>Bedrooms/Bathrooms: {property.size}</h3>
-          </div>
-          <p>{property.description}</p>
-          <div className="input-wrapper">
-            {/* <Reviews setReviews={setReviews} /> */}
-            <h3>Reviews:</h3>
-            {reviews?.map((review) => (
-              <div key={review._id}>
-                <p>Name: {review.name} </p>
-                <p>Review: {review.reviewDetails}</p>
-              </div>
-            ))}
-          </div>
+          {/* <div className="rental-header"> */}
+          <h3>Price: {property.price}</h3>
+          <h3>Bedrooms/Bathrooms: {property.size}</h3>
         </div>
-        <Link to="/rentals/all">Back</Link>
-        <Link to="/:rental_id/addreview">Add Review</Link>
+        <p>{property.description}</p>
+        <div className="input-wrapper">
+          {/* <Reviews setReviews={setReviews} /> */}
+          <h3>Reviews:</h3>
+          {reviews?.map((review) => (
+            <div key={review._id}>
+              <p>Name: {review.name} </p>
+              <p>Review: {review.reviewDetails}</p>
+            </div>
+          ))}
+        </div>
       </div>
+
+      <ul>
+        <div className="links">
+          <li>
+            <Link to="/rentals/all">Back</Link>
+          </li>
+          <li>
+            <Link to="/:rental_id/addreview">Add Review</Link>
+          </li>
+        </div>
+      </ul>
+      {/* </div> */}
     </body>
   ) : (
     <div className="protected">

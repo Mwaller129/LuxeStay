@@ -44,7 +44,7 @@ const App = () => {
           <Route path="/rentals/all" element={<Rentals user={user} />} />
           <Route
             path="/rentals/all/:id"
-            element={<RentalDetails user={user} />}
+            element={<RentalDetails user={user} property={property} />}
           />
           <Route path="/:rental_id/addreview" element={<Reviews />} />
           <Route path="rentals/addrental" element={<AddRental />} />
