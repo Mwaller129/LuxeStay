@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const controller = require("../controllers/RentalDetailsController")
+const controller = require("../controllers/RentalDetailController")
 const middleware = require("../middleware")
 
 router.get("/:rental_id", controller.GetRentalDetails)
