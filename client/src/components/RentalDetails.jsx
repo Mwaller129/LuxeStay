@@ -1,37 +1,45 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
-import { GetRentals } from "../services/Properties"
+import { GetRental } from "../services/Properties"
 import axios from "axios"
 import Reviews from "./Reviews"
 import Rentals from "./Rentals"
 
 const rentalDetails = (props) => {
-  console.log(props)
-  let navigate = useNavigate()
-  const [property, setProperties] = useState(null)
-  const [reviews, setReviews] = useState([])
+  //   let navigate = useNavigate()
+  const [property, setProperty] = useState([])
 
   let { id } = useParams()
+  console.log(id)
 
   useEffect(() => {
-    let selectedProperties = props.properties.find(
-      (property) => property._id === parseInt(id)
-    )
-    setProperties(selectedProperties)
-  }, [props.properties, id])
-
-  const getReviews = async () => {
-    try {
-      let res = await axios.get(`http://localhost:3001/reviews/${id}/reviews`)
-      console.log(res)
-      setReviews(res.data)
-    } catch (err) {
-      console.log(err)
+    const showProperty = async () => {
+      const data = await GetRental(id)
+      setProperty(data)
     }
-  }
-  useEffect(() => {
-    getReviews()
+    showProperty()
   }, [])
+  console.log(property)
+
+  //   useEffect(() => {
+  //     let selectedProperties = props.properties.find(
+  //       (property) => property._id === parseInt(id)
+  //     )
+  //     setProperties(selectedProperties)
+  //   }, [props.properties, id])
+
+  //   const getReviews = async () => {
+  //     try {
+  //       let res = await axios.get(`http://localhost:3001/reviews/${id}/reviews`)
+  //       console.log(res)
+  //       setReviews(res.data)
+  //     } catch (err) {
+  //       console.log(err)
+  //     }
+  //   }
+  //   useEffect(() => {
+  //     getReviews()
+  //   }, [])
 
   return property ? (
     <div className="main-content">
@@ -45,45 +53,45 @@ const rentalDetails = (props) => {
           </div>
 
           <div className="input-wrapper">
-            {/* <div className="rental-header"> */}
-            <h3>Price: {property.price}</h3>
-            <h3>Bedrooms/Bathrooms: {property.size}</h3>
-          </div>
+            <div className="rental-header">
+              <h3>Price: {property.price}</h3>
+              <h3>Bedrooms/Bathrooms: {property.size}</h3>
+            </div>
 
-          <p>{property.description}</p>
-          <div className="input-wrapper">
-            {/* <Reviews setReviews={setReviews} /> */}
-            <h3>Reviews:</h3>
-            {/* {reviews?.map((review) => (
-              <div key={review._id}>
-                <p>Name: {review.name} </p>
-                <p>Review: {review.reviewDetails}</p> */}
-            {/* </div>
-            ))} */}
+            <p>{property.description}</p>
+            <div className="input-wrapper">
+              {/* <Reviews setReviews={setReviews} />
+              <h3>Reviews:</h3>
+              {/* {reviews?.map((review) => (
+                <div key={review._id}>
+                  <p>Name: {review.name} </p>
+                  <p>Review: {review.reviewDetails}</p> */}
+              {/* </div>
+              ))} */}
+            </div>
           </div>
         </div>
+
+        <ul>
+          <div className="links">
+            <li>
+              <Link to="/rentals/all">Back</Link>
+            </li>
+            <li>
+              <Link to="/:rental_id/addreview">Add Review</Link>
+            </li>
+            <li>
+              <Link to="/:rental_id/reservation">Check Availability</Link>
+            </li>
+          </div>
+        </ul>
       </div>
-
-      <ul>
-        <div className="links">
-          <li>
-            <Link to="/rentals/all">Back</Link>
-          </li>
-          <li>
-            <Link to="/:rental_id/addreview">Add Review</Link>
-          </li>
-          <li>
-            <Link to="/:rental_id/reservation">Check Availability</Link>
-          </li>
-        </div>
-      </ul>
     </div>
-  ) : // ) : (
-  //   <div className="protected">
-  //     <h3>Oops! You must be signed in to do that!</h3>
-  //     <button onClick={() => navigate("/signin")}>Sign In</button>
-  //   </div>
-  null
+  ) : (
+    <div className="protected">
+      <h3>Oops! You must be signed in to do that!</h3>
+      <button onClick={() => navigate("/signin")}>Sign In</button>
+    </div>
+  )
 }
-
 export default rentalDetails

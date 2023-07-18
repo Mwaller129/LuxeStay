@@ -43,11 +43,11 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/rentals/all" element={<Rentals user={user} />} />
           <Route
-            path="/rentals/all/:rental_id"
+            path="/rentals/all/:id"
             element={<RentalDetails user={user} />}
           />
           <Route path="/:rental_id/addreview" element={<Reviews />} />
-          <Route path="rentals/addrental" element={<AddRental />} />
+          <Route path="/rentals/addrental" element={<AddRental />} />
           <Route path="/:rental_id/reservation" element={<ReservationForm />} />
         </Routes>
       </main>

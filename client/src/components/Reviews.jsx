@@ -36,7 +36,8 @@ const Reviews = ({ reviews, setReviews }) => {
         <div className="card-overlay centered">
           <p>
             Complete the form below to let us know about your experience at
-            <Link to={`${property.name}`}></Link>.
+            {`${property.name}`}
+            console.log(property.name)
           </p>
           <form className="addreview col" onSubmit={handleSubmit}>
             <div className="input-wrapper">
