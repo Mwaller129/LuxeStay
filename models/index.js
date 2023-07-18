@@ -2,13 +2,16 @@ const mongoose = require("mongoose")
 const userSchema = require("./User")
 const rentalSchema = require("./Rental")
 const reviewSchema = require("./Review")
+const reservationSchema = require("./Reservation")
 
 const User = mongoose.model("User", userSchema)
 const Rental = mongoose.model("Rental", rentalSchema)
 const Review = mongoose.model("Review", reviewSchema)
+const Reservation = mongoose.model("Reservation", reservationSchema)
 
 module.exports = {
   User,
   Rental,
   Review,
+  Reservation,
 }

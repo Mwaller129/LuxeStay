@@ -90,7 +90,7 @@ const rentalDetails = (props) => {
             <Link to="/:id/addreview">Add Review</Link>
           </li>
           <li>
-            <Link to="/:rental_id/reservation">Check Availability</Link>
+            <Link to="/reservation/:id">Check Availability</Link>
           </li>
         </div>
       </ul>

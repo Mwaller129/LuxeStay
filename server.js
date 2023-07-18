@@ -5,6 +5,7 @@ const cors = require("cors")
 const AuthRouter = require("./routes/AuthRouter")
 const RentalRouter = require("./routes/RentalRouter")
 const ReviewRouter = require("./routes/ReviewRouter")
+const ReservationRouter = require("./routes/ReservationRouter")
 
 const PORT = process.env.PORT || 3001
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use("/auth", AuthRouter)
 app.use("/rentals", RentalRouter)
 app.use("/reviews", ReviewRouter)
+app.use("/reservations", ReservationRouter)
 
 app.use("/", (req, res) => {
   res.send(`Connected!`)

@@ -2,10 +2,10 @@ const router = require("express").Router()
 const controller = require("../controllers/ReservationController")
 const middleware = require("../middleware")
 
-router.get("/:id", controller.GetReservation)
+router.get("/:rental_id", controller.GetReservations)
 router.get("/", controller.GetReservation)
 router.post(
-  "/:id",
+  "/:rental_id",
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreateReservation
