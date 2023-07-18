@@ -19,6 +19,6 @@ const CreateComingSoon = async (req, res) => {
 }
 
 module.exports = {
-  GetRentals,
-  CreateRental,
+  GetComingSoon,
+  CreateComingSoon,
 }
