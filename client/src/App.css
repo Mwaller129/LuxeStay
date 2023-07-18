@@ -144,7 +144,7 @@ form label {
 }
 
 .input-wrapper input {
-  padding: 0.6em 1.2em;
+  /* padding: 0.6em 1.2em; */
   margin: 0.5em auto;
   width: 100%;
   border-color: black;
@@ -174,7 +174,7 @@ form button:disabled {
   cursor: not-allowed;
 }
 
-h1, h3 {
+h1, h3, p {
   text-align: center;
 }
 

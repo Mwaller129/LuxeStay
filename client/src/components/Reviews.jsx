@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
+import { Link } from "react-router-dom"
 
 const Reviews = ({ reviews, setReviews }) => {
   const initialState = {
@@ -8,6 +9,7 @@ const Reviews = ({ reviews, setReviews }) => {
   }
 
   const [formState, setFormState] = useState(initialState)
+  const [property, setProperties] = useState([])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -30,11 +32,12 @@ const Reviews = ({ reviews, setReviews }) => {
     <div className="main-content">
       <div className="addreview col">
         <h1>Tell Us About Your Stay!</h1>
-        <p>
-          Complete the form below to let us know about your experience at this
-          property.{" "}
-        </p>
+
         <div className="card-overlay centered">
+          <p>
+            Complete the form below to let us know about your experience at
+            <Link to={`${property.name}`}></Link>.
+          </p>
           <form className="addreview col" onSubmit={handleSubmit}>
             <div className="input-wrapper">
               <div className="reviews">

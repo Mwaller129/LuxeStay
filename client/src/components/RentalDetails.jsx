@@ -32,37 +32,39 @@ const rentalDetails = (user) => {
   }, [])
 
   return user ? (
-    <body className="applybackground">
+    <div className="main-content">
       <div className="card-overlay centered">
-        {/* <Rentals property={property} /> */}
-        {/* <div className="rental-header"> */}
-        <div className="col">
-          <img
-            style={{ display: "block" }}
-            src={property.image}
-            alt={property.image}
-          />
-          {/* </div> */}
-
-          <div className="rental-name">
-            <h1>{property.name}</h1>
-          </div>
-        </div>
-        <div className="input-wrapper">
-          {/* <div className="rental-header"> */}
-          <h3>Price: {property.price}</h3>
-          <h3>Bedrooms/Bathrooms: {property.size}</h3>
-        </div>
-        <p>{property.description}</p>
-        <div className="input-wrapper">
-          {/* <Reviews setReviews={setReviews} /> */}
-          <h3>Reviews:</h3>
-          {reviews?.map((review) => (
-            <div key={review._id}>
-              <p>Name: {review.name} </p>
-              <p>Review: {review.reviewDetails}</p>
+        <div className="rental-grid">
+          <Rentals property={property} />
+          {property.map((property) => (
+            <div className="rental-card" key={property.id}>
+              <div className="images">
+                <img
+                  style={{ display: "block" }}
+                  src={property.image}
+                  alt={property.name}
+                />
+              </div>
+              <h3>{property.name}</h3>
             </div>
           ))}
+          <div className="input-wrapper">
+            {/* <div className="rental-header"> */}
+            <h3>Price: {property.price}</h3>
+            <h3>Bedrooms/Bathrooms: {property.size}</h3>
+          </div>
+
+          <p>{property.description}</p>
+          <div className="input-wrapper">
+            {/* <Reviews setReviews={setReviews} /> */}
+            <h3>Reviews:</h3>
+            {/* {reviews?.map((review) => (
+              <div key={review._id}>
+                <p>Name: {review.name} </p>
+                <p>Review: {review.reviewDetails}</p> */}
+            {/* </div>
+            ))} */}
+          </div>
         </div>
       </div>
 
@@ -76,8 +78,7 @@ const rentalDetails = (user) => {
           </li>
         </div>
       </ul>
-      {/* </div> */}
-    </body>
+    </div>
   ) : (
     <div className="protected">
       <h3>Oops! You must be signed in to do that!</h3>
