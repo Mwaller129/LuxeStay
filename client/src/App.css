@@ -88,9 +88,6 @@ img {
   background-color: white;
   box-shadow: 3px 0px 10px midnightblue;
  
-  
- 
-  
 }
 
 .col {
@@ -100,7 +97,7 @@ img {
   justify-content: center;
   min-width: 200px;
   min-height: 400px;
-  background-color: white;
+ 
   
   
   
@@ -194,3 +191,34 @@ h1, h3 {
   min-height: 2000px;
   padding: 10px;
 }
+
+.welcome-scroll{
+  height: 50px;
+  overflow:hidden;
+  position:relative;
+  color: red;
+  background-color: yellow;
+  
+  border: 1px solid orange;
+}
+
+.fadeIn-text {
+  font-family: sans serif;
+  font-size: 100px;
+  animation: fadeIn 5s;
+
+  /* position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  line-height: 50px;
+  text-align: center;
+  transform: translateX(100%);
+  animation: scroll-left 4s linear infinite; */
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
