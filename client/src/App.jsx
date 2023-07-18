@@ -11,6 +11,7 @@ import Navigation from "./components/Navigation"
 import Register from "./pages/Register"
 import SignIn from "./pages/SignIn"
 import ReservationForm from "./pages/ReservationForm"
+import ComingSoon from "./pages/ComingSoon"
 import { CheckSession } from "./services/Auth"
 
 const App = () => {
@@ -54,6 +55,7 @@ const App = () => {
           <Route path="/rentals/addrental" element={<AddRental />} />
           <Route path="/reservation/:id" element={<ReservationForm />} />
           <Route path="/reviews/:id" element={<Reviews user={user} />} />
+          <Route path="/comingsoon" element={<ComingSoon user={user} />} />
         </Routes>
       </main>
     </div>

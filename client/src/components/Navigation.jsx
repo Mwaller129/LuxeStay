@@ -17,6 +17,11 @@ const Navigation = ({ user, handleLogOut }) => {
                 </Link>
               </li>
               <li>
+                <Link to="/comingsoon" className="navLinks">
+                  Coming Soon
+                </Link>
+              </li>
+              <li>
                 <Link onClick={handleLogOut} to="/" className="navLinks">
                   Sign Out
                 </Link>

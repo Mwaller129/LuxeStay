@@ -32,3 +32,12 @@ export const GetReview = async (id) => {
     throw error
   }
 }
+
+export const GetComingSoon = async () => {
+  try {
+    const res = await Client.get("/comingsoon")
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
