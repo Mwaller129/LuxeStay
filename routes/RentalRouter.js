@@ -2,15 +2,16 @@ const router = require("express").Router()
 const controller = require("../controllers/RentalController")
 const middleware = require("../middleware")
 
-router.get("/all", controller.GetRentals)
+router.get("/", controller.GetRentals)
+router.get("/:id", controller.GetRental)
 router.post(
-  "/addrental",
+  "/",
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreateRental
 )
 router.put(
-  "/all/:rental_id",
+  "/:id",
   middleware.stripToken,
   middleware.verifyToken,
   controller.UpdateRental

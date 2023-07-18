@@ -8,6 +8,14 @@ const GetRentals = async (req, res) => {
     throw error
   }
 }
+const GetRental = async (req, res) => {
+  try {
+    const rentals = await Rental.findById(req.params.id)
+    res.send(rentals)
+  } catch (error) {
+    throw error
+  }
+}
 
 const CreateRental = async (req, res) => {
   try {
@@ -46,6 +54,7 @@ const DeleteRental = async (req, res) => {
 
 module.exports = {
   GetRentals,
+  GetRental,
   CreateRental,
   UpdateRental,
   DeleteRental,
