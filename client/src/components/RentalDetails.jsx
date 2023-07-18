@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { GetRentals } from "../services/Properties"
 import axios from "axios"
 import Reviews from "./Reviews"
 import Rentals from "./Rentals"
 
-const rentalDetails = (user) => {
+const rentalDetails = (props) => {
   let navigate = useNavigate()
-  const [property, setProperties] = useState([])
+  const [property, setProperties] = useState(null)
   const [reviews, setReviews] = useState([])
 
+  let { id } = useParams()
+
   useEffect(() => {
-    const showProperties = async () => {
-      const data = await GetRentals()
-      setProperties(data)
-    }
-    showProperties()
-  }, [])
+    let selectedProperties = props.properties.find(
+      (property) => property.id === parseInt(id)
+    )
+    setProperties(selectedProperties)
+  }, [props.properties, id])
 
   const getReviews = async () => {
     try {
@@ -31,23 +32,17 @@ const rentalDetails = (user) => {
     getReviews()
   }, [])
 
-  return user ? (
+  return property ? (
     <div className="main-content">
       <div className="card-overlay centered">
         <div className="rental-grid">
-          <Rentals property={property} />
-          {property.map((property) => (
-            <div className="rental-card" key={property.id}>
-              <div className="images">
-                <img
-                  style={{ display: "block" }}
-                  src={property.image}
-                  alt={property.name}
-                />
-              </div>
-              <h3>{property.name}</h3>
+          <div className="rental-card">
+            <div className="images">
+              <img src={property.image} alt={property.name} />
             </div>
-          ))}
+            <h3>{property.name}</h3>
+          </div>
+
           <div className="input-wrapper">
             {/* <div className="rental-header"> */}
             <h3>Price: {property.price}</h3>
@@ -82,12 +77,12 @@ const rentalDetails = (user) => {
         </div>
       </ul>
     </div>
-  ) : (
-    <div className="protected">
-      <h3>Oops! You must be signed in to do that!</h3>
-      <button onClick={() => navigate("/signin")}>Sign In</button>
-    </div>
-  )
+  ) : // ) : (
+  //   <div className="protected">
+  //     <h3>Oops! You must be signed in to do that!</h3>
+  //     <button onClick={() => navigate("/signin")}>Sign In</button>
+  //   </div>
+  null
 }
 
 export default rentalDetails
