@@ -9,6 +9,7 @@ import { Route, Routes } from "react-router"
 import Navigation from "./components/Navigation"
 import Register from "./pages/Register"
 import SignIn from "./pages/SignIn"
+import ReservationForm from "./pages/ReservationForm"
 import { CheckSession } from "./services/Auth"
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
           />
           <Route path="/:rental_id/addreview" element={<Reviews />} />
           <Route path="rentals/addrental" element={<AddRental />} />
+          <Route path="/:rental_id/reservation" element={<ReservationForm />} />
         </Routes>
       </main>
     </div>

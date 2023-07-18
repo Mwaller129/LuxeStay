@@ -76,6 +76,9 @@ const rentalDetails = (user) => {
           <li>
             <Link to="/:rental_id/addreview">Add Review</Link>
           </li>
+          <li>
+            <Link to="/:rental_id/reservation">Check Availability</Link>
+          </li>
         </div>
       </ul>
     </div>
