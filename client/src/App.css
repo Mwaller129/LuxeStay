@@ -13,7 +13,8 @@ body {
   border: solid 1px #bbb;
   padding: 15px;
   margin-top: 40px;
-  background: #eee;
+  background: lightgray;
+
 
  }
  .welcome {
@@ -22,6 +23,7 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
+  background: lightgray;
 
  }
 
@@ -162,7 +164,7 @@ form button {
   width: 50%;
 }
 
-form button:hover {
+form button :hover {
   opacity: 0.7;
 }
 
@@ -192,7 +194,7 @@ h1, h3 {
   padding: 10px;
 }
 
-.welcome-scroll{
+/* .welcome-scroll{
   height: 50px;
   overflow:hidden;
   position:relative;
@@ -200,12 +202,15 @@ h1, h3 {
   background-color: yellow;
   
   border: 1px solid orange;
-}
+} */
 
 .fadeIn-text {
   font-family: sans serif;
-  font-size: 100px;
+  font-size: 125px;
   animation: fadeIn 5s;
+  height: auto;
+  text-align: center;
+  /* background-color: white; */
 
   /* position: absolute;
   width: 100%;
@@ -220,5 +225,18 @@ h1, h3 {
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+.enterbutton {
+  background-color: black;
+  color: white;
+  /* align-self: center;
+  align-content: center; */
+  width: 5%;
+  height: 75px;
+  text-align: center;
+  
+  
+
 }
 
