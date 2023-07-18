@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
-import { GetRental } from "../services/Properties"
+import { GetRental, GetReview } from "../services/Properties"
 import axios from "axios"
 import Reviews from "./Reviews"
 import Rentals from "./Rentals"
@@ -8,9 +8,9 @@ import Rentals from "./Rentals"
 const rentalDetails = (props) => {
   //   let navigate = useNavigate()
   const [property, setProperty] = useState([])
+  const [review, setReview] = useState([])
 
   let { id } = useParams()
-  console.log(id)
 
   useEffect(() => {
     const showProperty = async () => {
@@ -19,7 +19,15 @@ const rentalDetails = (props) => {
     }
     showProperty()
   }, [])
-  console.log(property)
+
+  useEffect(() => {
+    const showReview = async () => {
+      const data = await GetReview(id)
+      setReview(data)
+    }
+    showReview()
+  }, [])
+  console.log(review)
 
   //   useEffect(() => {
   //     let selectedProperties = props.properties.find(
@@ -60,34 +68,34 @@ const rentalDetails = (props) => {
 
             <p>{property.description}</p>
             <div className="input-wrapper">
-              {/* <Reviews setReviews={setReviews} />
+              {/* <Reviews setReviews={setReviews} /> */}
               <h3>Reviews:</h3>
-              {/* {reviews?.map((review) => (
-                <div key={review._id}>
-                  <p>Name: {review.name} </p>
-                  <p>Review: {review.reviewDetails}</p> */}
-              {/* </div>
-              ))} */}
+              {/* {review.map((review) => (
+                <div key={review._id}> */}
+              <p>Name: {review.name} </p>
+              <p>Review: {review.reviewDetails}</p>
             </div>
+            {/* ))} */}
           </div>
         </div>
-
-        <ul>
-          <div className="links">
-            <li>
-              <Link to="/rentals/all">Back</Link>
-            </li>
-            <li>
-              <Link to="/:rental_id/addreview">Add Review</Link>
-            </li>
-            <li>
-              <Link to="/:rental_id/reservation">Check Availability</Link>
-            </li>
-          </div>
-        </ul>
       </div>
+
+      <ul>
+        <div className="links">
+          <li>
+            <Link to="/rentals/all">Back</Link>
+          </li>
+          <li>
+            <Link to="/:id/addreview">Add Review</Link>
+          </li>
+          <li>
+            <Link to="/:rental_id/reservation">Check Availability</Link>
+          </li>
+        </div>
+      </ul>
     </div>
   ) : (
+    // </div>
     <div className="protected">
       <h3>Oops! You must be signed in to do that!</h3>
       <button onClick={() => navigate("/signin")}>Sign In</button>

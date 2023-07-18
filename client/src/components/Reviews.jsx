@@ -2,14 +2,16 @@ import { useState } from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
 
-const Reviews = ({ reviews, setReviews }) => {
+const Reviews = ({ user }) => {
   const initialState = {
+    rental: "",
     name: "",
     reviewDetails: "",
   }
 
   const [formState, setFormState] = useState(initialState)
-  const [property, setProperties] = useState([])
+  const [reviews, setReviews] = useState([])
+  const [property, setProperty] = useState([])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -28,18 +30,38 @@ const Reviews = ({ reviews, setReviews }) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
 
-  return (
+  return user ? (
     <div className="main-content">
       <div className="addreview col">
         <h1>Tell Us About Your Stay!</h1>
-
         <div className="card-overlay centered">
-          <p>
-            Complete the form below to let us know about your experience at
-            {`${property.name}`}
-            console.log(property.name)
-          </p>
           <form className="addreview col" onSubmit={handleSubmit}>
+            <p>
+              Complete the form below to let us know about your experience at
+              <div>
+                <select id="property">
+                  <option selected="select" disabled>
+                    Select Luxury Penthouse
+                  </option>
+                  <option value="Entertainer's Showplace">
+                    Entertainer's Showplace
+                  </option>
+                  <option value="W Atlanta Penthouse">
+                    W Atlanta Penthouse
+                  </option>
+                  <option value="Atlantic Station Penthouse">
+                    Atlantic Station Penthouse
+                  </option>
+                  <option value="Peachtree St. Penthouse">
+                    Peachtree St. Penthouse
+                  </option>
+                  <option value="The Phoenix at Peachtree">
+                    The Phoenix at Peachtree
+                  </option>
+                </select>
+              </div>
+            </p>
+
             <div className="input-wrapper">
               <div className="reviews">
                 <label htmlFor="name">Name:</label>
@@ -62,6 +84,11 @@ const Reviews = ({ reviews, setReviews }) => {
           </form>
         </div>
       </div>
+    </div>
+  ) : (
+    <div className="protected">
+      <h3>Oops! You must be signed in to do that!</h3>
+      <button onClick={() => navigate("/signin")}>Sign In</button>
     </div>
   )
 }

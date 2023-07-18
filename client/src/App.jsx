@@ -46,7 +46,7 @@ const App = () => {
             path="/rentals/all/:id"
             element={<RentalDetails user={user} />}
           />
-          <Route path="/:rental_id/addreview" element={<Reviews />} />
+          <Route path="/:id/addreview" element={<Reviews user={user} />} />
           <Route path="/rentals/addrental" element={<AddRental />} />
           <Route path="/:rental_id/reservation" element={<ReservationForm />} />
         </Routes>

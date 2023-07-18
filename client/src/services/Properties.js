@@ -16,3 +16,11 @@ export const GetRental = async (id) => {
     throw error
   }
 }
+export const GetReview = async (id) => {
+  try {
+    const res = await Client.get(`/reviews/${id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
