@@ -13,7 +13,6 @@ import ReservationForm from "./pages/ReservationForm"
 import { CheckSession } from "./services/Auth"
 
 const App = () => {
-  const [properties, selectedProperty] = useState(null)
   const [user, setUser] = useState(null)
 
   const handleLogOut = () => {
@@ -44,14 +43,8 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/rentals/all" element={<Rentals user={user} />} />
           <Route
-            path="/rentals/all/:id"
-            element={
-              <RentalDetails
-                user={user}
-                properties={properties}
-                selectedProperty={selectedProperty}
-              />
-            }
+            path="/rentals/all/:rental_id"
+            element={<RentalDetails user={user} />}
           />
           <Route path="/:rental_id/addreview" element={<Reviews />} />
           <Route path="rentals/addrental" element={<AddRental />} />

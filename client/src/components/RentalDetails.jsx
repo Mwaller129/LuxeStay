@@ -6,6 +6,7 @@ import Reviews from "./Reviews"
 import Rentals from "./Rentals"
 
 const rentalDetails = (props) => {
+  console.log(props)
   let navigate = useNavigate()
   const [property, setProperties] = useState(null)
   const [reviews, setReviews] = useState([])
@@ -14,7 +15,7 @@ const rentalDetails = (props) => {
 
   useEffect(() => {
     let selectedProperties = props.properties.find(
-      (property) => property.id === parseInt(id)
+      (property) => property._id === parseInt(id)
     )
     setProperties(selectedProperties)
   }, [props.properties, id])

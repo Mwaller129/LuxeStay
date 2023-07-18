@@ -21,8 +21,8 @@ const Rentals = ({ user }) => {
         <div className="card-overlay centered">
           <div className="rental-grid">
             {property.map((property) => (
-              <div className="rental-card" key={property.id}>
-                <Link to={`${property.id}`}>
+              <div className="rental-card" key={property._id}>
+                <Link to={`${property._id}`}>
                   <div className="images">
                     <img
                       style={{ display: "block" }}
