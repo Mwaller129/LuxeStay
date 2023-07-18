@@ -31,7 +31,7 @@ const rentalDetails = (user) => {
   }, [])
 
   return user ? (
-    <div className="card-overlay centered">
+    <body className="card-overlay centered">
       <div className="rental-grid">
         <div className="rental-header">
           <div className="col">
@@ -67,7 +67,7 @@ const rentalDetails = (user) => {
           <Link to="/rentals/all">Back</Link>
         </div>
       </div>
-    </div>
+    </body>
   ) : (
     <div className="protected">
       <h3>Oops! You must be signed in to do that!</h3>
