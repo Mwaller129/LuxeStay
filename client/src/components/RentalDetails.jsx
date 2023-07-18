@@ -70,12 +70,13 @@ const rentalDetails = (props) => {
             <div className="input-wrapper">
               {/* <Reviews setReviews={setReviews} /> */}
               <h3>Reviews:</h3>
-              {/* {review.map((review) => (
-                <div key={review._id}> */}
-              <p>Name: {review.name} </p>
-              <p>Review: {review.reviewDetails}</p>
+              {review.map((review) => (
+                <div key={review._id}>
+                  <p>Name: {review.name} </p>
+                  <p>Review: {review.reviewDetails}</p>
+                </div>
+              ))}
             </div>
-            {/* ))} */}
           </div>
         </div>
       </div>

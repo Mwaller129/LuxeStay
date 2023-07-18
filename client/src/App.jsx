@@ -52,7 +52,7 @@ const App = () => {
             element={<AddReview user={user} />}
           />
           <Route path="/rentals/addrental" element={<AddRental />} />
-          <Route path="/:rental_id/reservation" element={<ReservationForm />} />
+          <Route path="/:id/reservation" element={<ReservationForm />} />
           <Route path="/reviews/:id" element={<Reviews user={user} />} />
         </Routes>
       </main>

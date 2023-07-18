@@ -104,10 +104,10 @@ const reservation = () => {
             </div>
             <button
               disabled={
-                !rentalValues.name ||
-                (!rentalValues.email &&
-                  rentalValues.phone &&
-                  rentalValues.description)
+                !reservationValues.name ||
+                (!reservationValues.email &&
+                  reservationValues.phone &&
+                  reservationValues.description)
               }
             >
               Submit
