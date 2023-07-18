@@ -8,6 +8,14 @@ const GetReviews = async (req, res) => {
     throw error
   }
 }
+const GetReview = async (req, res) => {
+  try {
+    const reviews = await Review.findById(req.params.id)
+    res.send(reviews)
+  } catch (error) {
+    throw error
+  }
+}
 
 const CreateReview = async (req, res) => {
   try {
@@ -50,6 +58,7 @@ const DeleteReview = async (req, res) => {
 
 module.exports = {
   GetReviews,
+  GetReview,
   CreateReview,
   UpdateReview,
   DeleteReview,

@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import Rentals from "./components/Rentals"
 import Reviews from "./components/Reviews"
 import AddRental from "./pages/AddRental"
+import AddReview from "./pages/AddReview"
 import RentalDetails from "./components/RentalDetails"
 import { Route, Routes } from "react-router"
 import Navigation from "./components/Navigation"
@@ -46,9 +47,13 @@ const App = () => {
             path="/rentals/all/:id"
             element={<RentalDetails user={user} />}
           />
-          <Route path="/:id/addreview" element={<Reviews user={user} />} />
+          <Route
+            path="rentals/all/:id/addreview"
+            element={<AddReview user={user} />}
+          />
           <Route path="/rentals/addrental" element={<AddRental />} />
           <Route path="/:rental_id/reservation" element={<ReservationForm />} />
+          <Route path="/reviews/:id" element={<Reviews user={user} />} />
         </Routes>
       </main>
     </div>

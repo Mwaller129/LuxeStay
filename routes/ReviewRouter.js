@@ -2,9 +2,10 @@ const router = require("express").Router()
 const controller = require("../controllers/ReviewController")
 const middleware = require("../middleware")
 
-router.get("/:rental_id/reviews", controller.GetReviews)
+router.get("/:id", controller.GetReviews)
+router.get("/", controller.GetReview)
 router.post(
-  "/:rental_id/addreview",
+  "/:id",
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreateReview
