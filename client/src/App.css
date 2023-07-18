@@ -78,8 +78,8 @@ img {
   margin-top: 25px;
 }
 
-.card-overlay {
-  width: 80%;
+.card-overlay, .rental-grid {
+  width: 60%;
   align-content: center;
   justify-content: center;
   padding: 1em;
@@ -95,11 +95,13 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: black;
+  min-height: 400px;
   
  
   
 }
-.rental-grid {
+/* .rental-grid {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -109,8 +111,8 @@ img {
   grid-gap: 1em;  
   width: 1000px;
   margin-left: 200px;
-  
-}
+
+} */
 .rental header {
   text-align: center;
 }

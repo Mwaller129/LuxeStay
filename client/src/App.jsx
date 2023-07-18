@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import "./App.css"
 import Home from "./pages/Home"
 import Rentals from "./components/Rentals"
+import Reviews from "./components/Reviews"
 import AddRental from "./pages/AddRental"
 import RentalDetails from "./components/RentalDetails"
 import { Route, Routes } from "react-router"
@@ -45,6 +46,7 @@ const App = () => {
             path="/rentals/all/:id"
             element={<RentalDetails user={user} />}
           />
+          <Route path="/:rental_id/addreview" element={<Reviews />} />
           <Route path="rentals/addrental" element={<AddRental />} />
         </Routes>
       </main>

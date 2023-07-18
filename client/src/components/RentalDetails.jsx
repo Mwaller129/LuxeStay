@@ -54,7 +54,7 @@ const rentalDetails = (user) => {
             </div>
             <p>{property.description}</p>
             <div className="input-wrapper">
-              <Reviews reviews={reviews} setReviews={setReviews} />
+              {/* <Reviews setReviews={setReviews} /> */}
               <h3>Reviews:</h3>
               {reviews?.map((review) => (
                 <div key={review._id}>
