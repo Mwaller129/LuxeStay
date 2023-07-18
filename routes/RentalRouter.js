@@ -16,7 +16,7 @@ router.put(
   controller.UpdateRental
 )
 router.delete(
-  "all/:rental_id",
+  "/all/:rental_id",
   middleware.stripToken,
   middleware.verifyToken,
   controller.DeleteRental
