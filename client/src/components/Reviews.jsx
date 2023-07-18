@@ -40,8 +40,6 @@ const Reviews = ({ reviews, setReviews }) => {
         <label htmlFor="reviewDetails">Review: </label>
         <textarea
           id="reviewDetails"
-          cols="20"
-          rows="10"
           onChange={handleChange}
           value={formState.reviewDetails}
         ></textarea>

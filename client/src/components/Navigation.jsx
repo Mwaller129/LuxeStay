@@ -12,15 +12,20 @@ const Navigation = ({ user, handleLogOut }) => {
           <h3>Welcome {user.email}!</h3>
           <br></br>
           <br></br>
-          <div className="links">
-            <Link to="/rentals/all" className="navLinks">
-              Rentals
-            </Link>
-
-            <Link onClick={handleLogOut} to="/" className="navLinks">
-              Sign Out
-            </Link>
-          </div>
+          <ul>
+            <div className="links">
+              <li>
+                <Link to="/rentals/all" className="navLinks">
+                  Rentals
+                </Link>
+              </li>
+              <li>
+                <Link onClick={handleLogOut} to="/" className="navLinks">
+                  Sign Out
+                </Link>
+              </li>
+            </div>
+          </ul>
         </div>
       </nav>
     )

@@ -22,11 +22,13 @@ const Rentals = ({ user }) => {
           {property.map((property) => (
             <div className="rental-card" key={property.id}>
               <Link to={`${property.id}`}>
-                <img
-                  style={{ display: "block" }}
-                  src={property.image}
-                  alt={property.name}
-                />
+                <div className="images">
+                  <img
+                    style={{ display: "block" }}
+                    src={property.image}
+                    alt={property.name}
+                  />
+                </div>
                 <h3>{property.name}</h3>
               </Link>
             </div>
