@@ -7,29 +7,37 @@ import Rentals from "./Rentals"
 const Reviews = ({ props }) => {
   //   let navigate = useNavigate()
 
-  const [review, setReview] = useState([])
+  const [reviews, setReviews] = useState([])
 
   let { id } = useParams()
 
   useEffect(() => {
     const showReview = async () => {
       const data = await GetReviews(id)
-      setReview(data)
+      setReviews(data)
     }
     showReview()
   }, [])
-  console.log(review)
+  console.log(reviews)
 
-  return review ? (
+  const removeReview = (id) => {
+    let reviewList = [...reviews]
+    reviewList.splice(id, 1)
+    setReviews(reviewList)
+  }
+
+  return reviews ? (
     <div className="main-content">
       <div className="card-overlay centered">
         <div className="rental-grid">
           <h1>Reviews</h1>
-          {review.map((review) => (
+          {reviews.map((review) => (
             <div className="rental-card" key={review._id}>
               <h3>{review.rental}</h3>
               <h3>{review.name}</h3>
               <h3>{review.reviewDetails}</h3>
+
+              <button onClick={() => removeReview(review._id)}> x </button>
             </div>
           ))}
         </div>
@@ -42,4 +50,5 @@ const Reviews = ({ props }) => {
     </div>
   )
 }
+
 export default Reviews

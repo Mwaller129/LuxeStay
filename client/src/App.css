@@ -50,8 +50,37 @@ body {
     display: flex;
     list-style: none;
     justify-content: space-around;  
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
   }
-    
+
+  li {
+    float: left;
+
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  a:link {
+    background-color: black;
+  }
+  
+  a:visited {
+    background-color: whitesmoke;
+  }
+  
+  a:hover {
+    background-color: midnightblue;
+  }
+  
+  a:active {
+    background-color: indigo;
+  } 
 .footer {
   padding: 5px; 
   background: #bbb;
