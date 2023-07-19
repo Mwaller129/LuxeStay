@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 const addRental = () => {
   let navigate = useNavigate()
@@ -26,9 +26,11 @@ const addRental = () => {
   return (
     <div className="main-content">
       <div className="addrental col">
-        <h1>Ready to Rent your Luxury Penthouse?</h1>
-        <p>Complete the form below to let us know more about your property. </p>
         <div className="card-overlay centered">
+          <h1>Ready to Rent your Luxury Penthouse?</h1>
+          <h3>
+            Complete the form below to let us know more about your property.
+          </h3>
           <form className="col" onSubmit={handleSubmit}>
             <div className="input-wrapper">
               <label htmlFor="name">Name</label>
@@ -87,6 +89,11 @@ const addRental = () => {
           </form>
         </div>
       </div>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+      </ul>
     </div>
   )
 }

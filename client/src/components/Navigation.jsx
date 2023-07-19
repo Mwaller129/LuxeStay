@@ -6,7 +6,9 @@ const Navigation = ({ user, handleLogOut }) => {
     userOptions = (
       <nav>
         <div className="welcome">
-          <h3>Welcome {user.email}!</h3>
+          <div className="welcome-email">
+            <h3>Welcome {user.email}!</h3>
+          </div>
           <br></br>
           <br></br>
           <ul>

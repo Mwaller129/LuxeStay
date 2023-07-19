@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 const reservation = () => {
   let navigate = useNavigate()
@@ -115,6 +115,11 @@ const reservation = () => {
           </form>
         </div>
       </div>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+      </ul>
     </div>
   )
 }
