@@ -32,9 +32,9 @@ const addReview = ({ user }) => {
 
   return user ? (
     <div className="main-content">
-      <h1>Tell Us About Your Stay!</h1>
       <div className="card-overlay centered">
         <form className="addreview col" onSubmit={handleSubmit}>
+          <h1>Tell Us About Your Stay!</h1>
           <p>
             Complete the form below to let us know about your experience at
             <div>
@@ -77,7 +77,9 @@ const addReview = ({ user }) => {
                 onChange={handleChange}
                 value={formState.reviewDetails}
               ></input>
-              <button type="submit">Submit</button>
+              <button className="submitreview-btn" type="submit">
+                Submit
+              </button>
             </div>
           </div>
         </form>

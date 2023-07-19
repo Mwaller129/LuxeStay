@@ -37,7 +37,7 @@ const Reviews = ({ props }) => {
               <h3>{review.name}</h3>
               <h3>{review.reviewDetails}</h3>
 
-              <button onClick={() => removeReview(review._id)}> x </button>
+              <button onClick={() => removeReview(review._id)}> Block </button>
             </div>
           ))}
         </div>
