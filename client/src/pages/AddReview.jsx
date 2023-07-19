@@ -23,7 +23,7 @@ const addReview = ({ user }) => {
     reviewList.push(newReview.data)
     setReviews(reviewList)
     setFormState(initialState)
-    navigate("/")
+    navigate(`/reviews/${id}`)
   }
 
   const handleChange = (event) => {
