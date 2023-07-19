@@ -30,7 +30,7 @@ const comingSoon = ({ user }) => {
                   />
                 </div>
                 <h3>{newProperty.name}</h3>
-                <h3>{newProperty.waitlist}Waitlist:</h3>
+                <h3>{newProperty.availability}</h3>
               </div>
             ))}
           </div>

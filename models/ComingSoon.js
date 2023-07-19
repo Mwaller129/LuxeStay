@@ -5,7 +5,7 @@ const comingSoonSchema = new Schema(
   {
     name: { type: String, required: true },
     image: { type: String },
-    waitlist: { Boolean },
+    availability: { type: String },
   },
   { timestamps: true }
 )

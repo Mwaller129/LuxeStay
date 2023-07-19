@@ -5,7 +5,7 @@ const middleware = require("../middleware")
 router.get("/", controller.GetRentals)
 router.get("/:id", controller.GetRental)
 router.post(
-  "/",
+  "/:id",
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreateRental

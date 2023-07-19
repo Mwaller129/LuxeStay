@@ -55,14 +55,16 @@ const rentalDetails = (props) => {
         <div className="rental-grid">
           <div className="rental-card">
             <div className="images">
+              <div className="rental-details-name">
+                <h1>{property.name}</h1>
+              </div>
               <img src={property.image} alt={property.name} />
             </div>
-            <h3>{property.name}</h3>
           </div>
 
           <div className="input-wrapper">
             <div className="rental-header">
-              <h3>Price: {property.price}</h3>
+              <h3>Price: ${property.price} per night</h3>
               <h3>Bedrooms/Bathrooms: {property.size}</h3>
             </div>
 
@@ -87,7 +89,7 @@ const rentalDetails = (props) => {
             <Link to="/rentals/all">Back</Link>
           </li>
           <li>
-            <Link to="/:id/addreview">Add Review</Link>
+            <Link to="/reviews/:id">Add Review</Link>
           </li>
           <li>
             <Link to="/reservation/:id">Check Availability</Link>
