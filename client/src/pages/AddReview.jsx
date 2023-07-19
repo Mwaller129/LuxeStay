@@ -1,13 +1,14 @@
-import { useState } from "react"
+import { useState, useParams } from "react"
 import axios from "axios"
 import { Link, useNavigate } from "react-router-dom"
-
+import Client from "../services/api.js"
 const addReview = ({ user }) => {
   const initialState = {
     rental: "",
     name: "",
     reviewDetails: "",
   }
+  const { id } = { useParams }
 
   const [formState, setFormState] = useState(initialState)
   const [reviews, setReviews] = useState([])
@@ -16,17 +17,14 @@ const addReview = ({ user }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let newReview = await axios.post(
-      "http://localhost:3001/rentals/:id",
-      formState
-    )
+    let newReview = await Client.post(`/rentals/${id}`, formState)
     console.log(newReview)
     let reviewList = [...reviews]
     reviewList.push(newReview.data)
     setReviews(reviewList)
     setFormState(initialState)
+    navigate("/")
   }
-  navigate("/")
 
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })

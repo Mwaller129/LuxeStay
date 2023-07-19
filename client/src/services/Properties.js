@@ -24,6 +24,14 @@ export const GetReviews = async (id) => {
     throw error
   }
 }
+export const CreateReviews = async (id, data) => {
+  try {
+    const res = await Client.get(`/reviews/${id}`, data)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
 export const GetReview = async (id) => {
   try {
     const res = await Client.get(`/reviews/${id}`)
