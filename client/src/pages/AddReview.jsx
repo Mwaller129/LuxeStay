@@ -1,6 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const addReview = ({ user }) => {
   const initialState = {
@@ -11,7 +11,8 @@ const addReview = ({ user }) => {
 
   const [formState, setFormState] = useState(initialState)
   const [reviews, setReviews] = useState([])
-  const [property, setProperty] = useState([])
+
+  let navigate = useNavigate()
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -25,6 +26,7 @@ const addReview = ({ user }) => {
     setReviews(reviewList)
     setFormState(initialState)
   }
+  navigate("/")
 
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })

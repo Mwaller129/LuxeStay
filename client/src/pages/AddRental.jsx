@@ -1,31 +1,25 @@
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 
-const addRental = () => {
+const addRental = ({ user }) => {
   const initialState = {
     name: "",
     email: "",
     phone: "",
     description: "",
   }
-  let navigate = useNavigate()
-  const [rentalValues, setRentalValues] = useState(initialState)
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    let newRental = await axios.post(
-      "http://localhost:3001/rentals/newrentals",
-      rentalValues
-    )
-    setFormState(initialState)
-  }
-  navigate("/rentals/all")
+  const [rentalValues, setRentalValues] = useState({ initialState })
 
   const handleChange = (e) => {
     setRentalValues({ ...rentalValues, [e.target.name]: e.target.value })
   }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    await axios.post("http://localhost:3001/rentals/newrentals", rentalValues)
+    setRentalState(initialState)
+  }
 
-  return (
+  return user ? (
     <div className="main-content">
       <div className="addrental col">
         <div className="card-overlay centered">
@@ -96,6 +90,11 @@ const addRental = () => {
           <Link to="/">Home</Link>
         </li>
       </ul>
+    </div>
+  ) : (
+    <div className="protected">
+      <h3>Oops! You must be signed in to do that!</h3>
+      <button onClick={() => navigate("/signin")}>Sign In</button>
     </div>
   )
 }
