@@ -2,27 +2,29 @@ import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 
 const addRental = () => {
-  let navigate = useNavigate()
-  const [rentalValues, setRentalValues] = useState({
+  const initialState = {
     name: "",
     email: "",
     phone: "",
     description: "",
-  })
+  }
+  let navigate = useNavigate()
+  const [rentalValues, setRentalValues] = useState(initialState)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    let newRental = await axios.post(
+      "http://localhost:3001/rentals/newrentals",
+      rentalValues
+    )
+    setFormState(initialState)
+  }
+  navigate("/rentals/all")
+
   const handleChange = (e) => {
     setRentalValues({ ...rentalValues, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setRentalValues({
-      name: "",
-      email: "",
-      phone: "",
-      description: "",
-    })
-    navigate("/rentals/all")
-  }
   return (
     <div className="main-content">
       <div className="addrental col">
