@@ -3,6 +3,7 @@
 ## <sub> Date: 7/19/23 </sub>
 
 ### By: Jacquelyn Waller
+### <sub> (www.linkedin.com/in/jacquelyn-m-waller)
 
 ## Description
 ### <sub> A full stack application that allows users to view, rent and review Luxury Rental Penthouses in Atlanta, GA. </sub>
