@@ -39,17 +39,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 2000px;
-  /* height: 100%;
-  scroll-behavior: ; */
   margin-top: 15px;
 }
-/* .nav {
-  padding: 5px; 
-  background: #222;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-} */
+
   ul {
     display: flex;
     list-style: none;
@@ -82,29 +74,14 @@ body {
     background-color: midnightblue;
   }
   
-  a:active {
-    background-color: indigo;
-  } 
+ 
 .footer {
   padding: 5px; 
   background: #bbb;
   margin-top: -15px;
   
 }
-/* nav {
-  background-color: black;
-  color: white;
-  display:flex;
-  justify-content: right;
-  align-items: first baseline;
-  padding-right: 10px;
-  height: 50px;
- 
-  
-}
- .navLinks {
-  color: white;
-} */
+
 img {
   display: block;
   margin-left: auto;
@@ -140,26 +117,7 @@ img {
     font-style: italic;
   }
  
-  
- 
-  
-  
-  
- 
-  
 
-/* .rental-grid {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  box-shadow: 2px 0px 10px black;
-  grid-gap: 1em;  
-  width: 1000px;
-  margin-left: 200px;
-
-} */
 .rental header {
   text-align: center;
 }
@@ -185,7 +143,6 @@ form label {
 }
 
 .input-wrapper input {
-  /* padding: 0.6em 1.2em; */
   margin: 0.5em auto;
   width: 100%;
   border-color: black;
@@ -238,15 +195,7 @@ h1, h3, p {
   padding: 10px;
 }
 
-/* .welcome-scroll{
-  height: 50px;
-  overflow:hidden;
-  position:relative;
-  color: red;
-  background-color: yellow;
-  
-  border: 1px solid orange;
-} */
+
 
 .fadeIn-text {
   font-family: sans serif;
@@ -254,16 +203,6 @@ h1, h3, p {
   animation: fadeIn 5s;
   height: auto;
   text-align: center;
-  /* background-color: white; */
-
-  /* position: absolute;
-  width: 100%;
-  height: 100%;
-  margin-top: 0;
-  line-height: 50px;
-  text-align: center;
-  transform: translateX(100%);
-  animation: scroll-left 4s linear infinite; */
 }
 
 @keyframes fadeIn {
@@ -275,8 +214,6 @@ h1, h3, p {
   background-color: black;
   color: white;
   padding: 14px 16px;
-  /* align-self: center;
-  align-content: center; */
   width: 10%;
   height: 75px;
   text-align: center;
