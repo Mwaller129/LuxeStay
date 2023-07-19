@@ -48,7 +48,10 @@ const App = () => {
             path="/rentals/all/:id"
             element={<RentalDetails user={user} />}
           />
-          <Route path="/reviews/:id" element={<AddReview user={user} />} />
+          <Route
+            path="/reviews/:id/addreview"
+            element={<AddReview user={user} />}
+          />
           <Route path="/rentals/addrental" element={<AddRental />} />
           <Route path="/reservation/:id" element={<ReservationForm />} />
           <Route path="/reviews/:id" element={<Reviews user={user} />} />

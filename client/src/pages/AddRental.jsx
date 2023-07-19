@@ -15,13 +15,13 @@ const addRental = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setFormValues({
+    setRentalValues({
       name: "",
       email: "",
       phone: "",
       description: "",
     })
-    navigate("rentals/all")
+    navigate("/rentals/all")
   }
   return (
     <div className="main-content">
