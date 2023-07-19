@@ -19,8 +19,8 @@
 <sub>LuxeStay is a full stack applications that allows users to find luxury penthouse rentals for short and long term stays. Users can view detailed descriptions of each property for more information about it's luxurious amentities and accomodations. Users can also leave reviews to share details baout their recent visits and see listings for future rentals.</sub>
 
 ## Screenshots
-![Home](..client/src/assets/images/home.png)
-![Rentals](..client/src/assets/images/rentals.png)
+![Home](client/src/assets/home.png)
+![Rentals](client/src/assets/rentals.png)
 ## Credits
 [Atlanta Fine Homes Sotheby's International](https://www.ajc.com/life/private-quarters/this-149-million-buckhead-penthouse-offers-views-of-atlantas-skyline/WMYMEILJGRBQZJCSVKKRVZENFU/)
 [Homes & Villas by Marriott](https://homes-and-villas.marriott.com/en/properties/78082393-atlanta-spectacular-midtown-penthouse-with-astounding-views)

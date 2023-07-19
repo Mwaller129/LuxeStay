@@ -223,4 +223,12 @@ h1, h3, p {
 .submitreview-btn {
   width: 35%
 }
+.block-button {
+  background-color: black;
+  color: white;
+  align-self: center;
+  width: 15%;
+  text-align: center;
+  justify-content: center;
+}
 
