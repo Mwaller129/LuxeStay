@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 import Client from "../services/api.js"
 const addReview = ({ user }) => {
   const initialState = {
-    rental: "",
+    rentalName: "",
     name: "",
     reviewDetails: "",
   }
@@ -17,7 +17,7 @@ const addReview = ({ user }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let newReview = await Client.post(`/rentals/${id}`, formState)
+    let newReview = await Client.post(`/reviews/${id}`, formState)
     console.log(newReview)
     let reviewList = [...reviews]
     reviewList.push(newReview.data)
@@ -37,7 +37,7 @@ const addReview = ({ user }) => {
           <h1>Tell Us About Your Stay!</h1>
           <p>
             Complete the form below to let us know about your experience at
-            <div>
+            {/* <div>
               <select id="property">
                 <option selected="select" disabled>
                   Select Luxury Penthouse
@@ -56,11 +56,20 @@ const addReview = ({ user }) => {
                   The Phoenix at Peachtree
                 </option>
               </select>
-            </div>
+            </div> */}
           </p>
 
           <div className="input-wrapper">
             <div className="reviews">
+              <label htmlFor="rentalName">Property Name:</label>
+              <input
+                type="text"
+                id="rentalName"
+                placeholder="Property Name"
+                onChange={handleChange}
+                value={formState.rentalName}
+              />
+
               <label htmlFor="name">Name:</label>
               <input
                 type="text"

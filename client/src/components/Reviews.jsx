@@ -33,7 +33,7 @@ const Reviews = ({ props }) => {
           <h1>Reviews</h1>
           {reviews.map((review) => (
             <div className="rental-card" key={review._id}>
-              <h3>{review.rental}</h3>
+              <h3>{review.rentalName}</h3>
               <h3>{review.name}</h3>
               <h3>{review.reviewDetails}</h3>
 

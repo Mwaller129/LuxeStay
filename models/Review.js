@@ -3,7 +3,17 @@ const Schema = mongoose.Schema
 
 const reviewSchema = new Schema(
   {
-    rental: [{ type: mongoose.Schema.Types.ObjectId, ref: "Rental" }],
+    // rentalName: {
+    //   type: String,
+    //   enum: [
+    //     "Entertainer's Showplace",
+    //     "W Atlanta Penthouse",
+    //     "Atlantic Station Penthouse",
+    //     "Peachtree St. Penthouse",
+    //     "The Phoenix at Peachtree",
+    //   ],
+    // },
+    rentalName: { type: String },
     name: { type: String, required: true },
     reviewDetails: { type: String },
   },

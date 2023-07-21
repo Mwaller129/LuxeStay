@@ -25,7 +25,7 @@ const reservation = () => {
       phone: "",
       Message: "",
     })
-    navigate("rentals/all")
+    navigate("/confirmation")
   }
   return (
     <div className="main-content">
