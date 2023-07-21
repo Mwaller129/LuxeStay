@@ -11,7 +11,7 @@ router.post(
   controller.CreateReview
 )
 router.put(
-  "/:id",
+  "/:id/updatereview",
   middleware.stripToken,
   middleware.verifyToken,
   controller.UpdateReview

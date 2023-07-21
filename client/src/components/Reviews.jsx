@@ -5,8 +5,6 @@ import axios from "axios"
 import Rentals from "./Rentals"
 
 const Reviews = ({ props }) => {
-  //   let navigate = useNavigate()
-
   const [reviews, setReviews] = useState([])
 
   let { id } = useParams()
@@ -41,13 +39,13 @@ const Reviews = ({ props }) => {
                 className="block-button"
                 onClick={() => removeReview(review._id)}
               >
-                {" "}
-                Block{" "}
+                Block
               </button>
             </div>
           ))}
         </div>
       </div>
+      <Link to="/reviews/:id/update">Update Review</Link>
     </div>
   ) : (
     <div className="protected">

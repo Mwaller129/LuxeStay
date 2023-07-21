@@ -66,3 +66,11 @@ export const DeleteReview = async () => {
     throw error
   }
 }
+export const UpdateReview = async (id, data) => {
+  try {
+    const res = await Client.put(`/reviews/${id}`, data)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}

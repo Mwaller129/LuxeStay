@@ -29,26 +29,6 @@ const rentalDetails = (props) => {
   }, [])
   console.log(review)
 
-  //   useEffect(() => {
-  //     let selectedProperties = props.properties.find(
-  //       (property) => property._id === parseInt(id)
-  //     )
-  //     setProperties(selectedProperties)
-  //   }, [props.properties, id])
-
-  //   const getReviews = async () => {
-  //     try {
-  //       let res = await axios.get(`http://localhost:3001/reviews/${id}/reviews`)
-  //       console.log(res)
-  //       setReviews(res.data)
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   }
-  //   useEffect(() => {
-  //     getReviews()
-  //   }, [])
-
   return property ? (
     <div className="main-content">
       <div className="card-overlay centered">

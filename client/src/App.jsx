@@ -12,6 +12,7 @@ import Register from "./pages/Register"
 import SignIn from "./pages/SignIn"
 import ReservationForm from "./pages/ReservationForm"
 import ComingSoon from "./pages/ComingSoon"
+import UpdateReview from "./pages/UpdateReview"
 import { CheckSession } from "./services/Auth"
 
 const App = () => {
@@ -56,6 +57,10 @@ const App = () => {
           <Route path="/reservation/:id" element={<ReservationForm />} />
           <Route path="/reviews/:id" element={<Reviews user={user} />} />
           <Route path="/comingsoon" element={<ComingSoon user={user} />} />
+          <Route
+            path="/reviews/:id/update"
+            element={<UpdateReview user={user} />}
+          />
         </Routes>
       </main>
     </div>

@@ -40,9 +40,7 @@ const comingSoon = ({ user }) => {
             <li>
               <Link to="/">Back</Link>
             </li>
-            <li>
-              <Link to="/rentals/addrental">Add Rental</Link>
-            </li>
+            <li>{/* <Link to="/rentals/addrental">Add Rental</Link> */}</li>
           </div>
         </ul>
       </div>
