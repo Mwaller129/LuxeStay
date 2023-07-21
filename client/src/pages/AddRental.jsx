@@ -10,13 +10,17 @@ const addRental = ({ user }) => {
   }
   const [rentalValues, setRentalValues] = useState({ initialState })
 
+  let navigate = useNavigate()
+
   const handleChange = (e) => {
     setRentalValues({ ...rentalValues, [e.target.name]: e.target.value })
   }
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    await axios.post("http://localhost:3001/rentals/newrentals", rentalValues)
-    setRentalState(initialState)
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    let newRental = await Client.post("/addrental", formState)
+    console.log(newRental)
+    setRentalValues(initialState)
+    navigate("/rentals")
   }
 
   return user ? (

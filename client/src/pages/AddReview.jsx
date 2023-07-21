@@ -35,29 +35,7 @@ const addReview = ({ user }) => {
       <div className="card-overlay centered">
         <form className="addreview col" onSubmit={handleSubmit}>
           <h1>Tell Us About Your Stay!</h1>
-          <p>
-            Complete the form below to let us know about your experience at
-            {/* <div>
-              <select id="property">
-                <option selected="select" disabled>
-                  Select Luxury Penthouse
-                </option>
-                <option value="Entertainer's Showplace">
-                  Entertainer's Showplace
-                </option>
-                <option value="W Atlanta Penthouse">W Atlanta Penthouse</option>
-                <option value="Atlantic Station Penthouse">
-                  Atlantic Station Penthouse
-                </option>
-                <option value="Peachtree St. Penthouse">
-                  Peachtree St. Penthouse
-                </option>
-                <option value="The Phoenix at Peachtree">
-                  The Phoenix at Peachtree
-                </option>
-              </select>
-            </div> */}
-          </p>
+          <p>Complete the form below to let us know about your experience at</p>
 
           <div className="input-wrapper">
             <div className="reviews">

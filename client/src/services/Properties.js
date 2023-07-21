@@ -32,6 +32,14 @@ export const CreateReviews = async (id, data) => {
     throw error
   }
 }
+export const CreateRental = async (id, data) => {
+  try {
+    const res = await Client.get("/addrental", data)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
 export const GetReview = async (id) => {
   try {
     const res = await Client.get(`/reviews/${id}`)
